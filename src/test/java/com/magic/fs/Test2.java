@@ -1,6 +1,5 @@
 package com.magic.fs;
 
-import org.xhtmlrenderer.css.sheet.FontFaceRule;
 import org.xhtmlrenderer.swing.Java2DRenderer;
 
 import javax.imageio.ImageIO;
@@ -16,13 +15,13 @@ import java.nio.charset.StandardCharsets;
  * @author mazikai
  * @date 2025/1/4
  */
-public class Test1 {
+public class Test2 {
     public static void main(String[] args) throws IOException, FontFormatException {
         File temp = File.createTempFile("tmp_espos_sample", ".html");
         temp.deleteOnExit();
         OutputStream tmpStreamxhtml = new FileOutputStream(temp);
-//        String html = readHtmlFile("D:\\workspace\\FlyingSauerDemo\\src\\main\\resources\\test.html");
-        String html = readHtmlFile("/root/worspace/FlyingSauerDemo/test.html");
+        String html = readHtmlFile("D:\\workspace\\FlyingSauerDemo\\src\\main\\resources\\test.html");
+//        String html = readHtmlFile("/root/worspace/FlyingSauerDemo/test.html");
         System.out.println("html = " + html);
 
         tmpStreamxhtml.write(html.getBytes(StandardCharsets.UTF_8));
@@ -34,8 +33,8 @@ public class Test1 {
         Java2DRenderer render = new Java2DRenderer(tmpFileURL, tmpBaseURL, 576); // 576 is max printer area of the printer, you can configure to your
         BufferedImage image = render.getImage();
 
-        File output = new File("/root/png/css.png");
-//        File output = new File("css.png");
+//        File output = new File("/root/png/css.png");
+        File output = new File("css.png");
         ImageIO.write(image, "png", output);
 
 
