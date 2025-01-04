@@ -15,7 +15,7 @@ import java.io.*;
  */
 public class Test1 {
     public static void main(String[] args) throws IOException {
-        File temp = File.createTempFile("tmp_espos_sample", ".xhtml");
+        File temp = File.createTempFile("tmp_espos_sample", ".html");
         temp.deleteOnExit();
         OutputStream tmpStreamxhtml = new FileOutputStream(temp);
         String html = readHtmlFile("D:\\workspace\\FlyingSauerDemo\\src\\main\\resources\\test.html");
